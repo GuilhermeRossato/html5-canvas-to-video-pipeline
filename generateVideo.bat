@@ -1,0 +1,1 @@
+ffmpeg -framerate 20 -i ./data/image%d.png ./data/output.mp4
