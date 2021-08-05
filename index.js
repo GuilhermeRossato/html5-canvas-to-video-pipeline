@@ -1,6 +1,8 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
+const isRecordingAllowed = true;
+
 function getColor() {
     return [
         "#B5EAD7",
@@ -227,7 +229,7 @@ function update() {
         ctx.arc(particles[i].x + particles[i].radius/2, particles[i].y + particles[i].radius/2, particles[i].radius, 0, 2*Math.PI);
         ctx.fill();
     }
-    if (false && recording) {
+    if (isRecordingAllowed && recording) {
         sendCanvasBinaryToServer().then(update).catch(console.log);
     } else {
         requestAnimationFrame(update);
